@@ -3,4 +3,3 @@
     <input type="text" name="nombre" required>
     <button type="submit">Iniciar Juego</button>
 </form>
-
