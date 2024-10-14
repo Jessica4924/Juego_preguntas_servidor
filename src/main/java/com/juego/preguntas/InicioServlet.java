@@ -11,7 +11,7 @@ public class InicioServlet extends HttpServlet {
         String nombre = request.getParameter("nombre");
         HttpSession session = request.getSession();
         session.setAttribute("jugador", nombre);
-        session.setAttribute("preguntaActual", 0);
+        session.setAttribute("preguntaActual", 0); //Inicializar en la primera pregunta
         Integer juegos = (Integer) session.getAttribute("juegos");
         if (juegos == null) {
             juegos = 0;
@@ -19,6 +19,6 @@ public class InicioServlet extends HttpServlet {
         session.setAttribute("juegos", juegos + 1);
 
         session.setAttribute("ip", request.getRemoteAddr());
-        response.sendRedirect("pregunta");
+        response.sendRedirect("pregunta"); // Redirigir al servlet de pregunta
     }
 }
